@@ -1,7 +1,7 @@
 <?php
 
-// Forked from https://gist.github.com/1809044
-// Available from https://gist.github.com/nichtich/5290675#file-deploy-php
+// Forked from https://gist.github.com/nichtich/5290675
+// Available from https://github.com/Geert404/PushToServer-template#file-deploy-php
 
 $TITLE   = 'Git Deployment Service';
 $VERSION = '0.1';
@@ -17,7 +17,9 @@ echo <<<EOT
 <pre>
 $TITLE
 v$VERSION
-\n
+
+
+
 EOT;
 
 // Check whether the received trigger is from an allowed source
