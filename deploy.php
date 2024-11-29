@@ -15,7 +15,6 @@ echo <<<EOT
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
 <pre>
-Test verandering php bestand
 $TITLE
 v$VERSION
 
