@@ -3,8 +3,8 @@
 // Forked from https://gist.github.com/1809044
 // Available from https://gist.github.com/nichtich/5290675#file-deploy-php
 
-$TITLE   = 'Git Deployment Hamster';
-$VERSION = '0.11';
+$TITLE   = 'Git Deployment Service';
+$VERSION = '0.1';
 
 echo <<<EOT
 <!DOCTYPE HTML>
@@ -15,19 +15,29 @@ echo <<<EOT
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
 <pre>
-  o-o    $TITLE
- /\\"/\   v$VERSION
-(`=*=') 
- ^---^`-.
+$TITLE
+v$VERSION
 EOT;
 
-// Check whether client is allowed to trigger an update
+// Check whether the received trigger is from an allowed source
 
 $allowed_ips = array(
 	'207.97.227.', '50.57.128.', '108.171.174.', '50.57.231.', '204.232.175.', '192.30.252.', // GitHub
-	'195.37.139.','193.174.' // VZG
 );
 $allowed = false;
+
+function exit_if_error($errormessage) {
+    header('HTTP/1.1 403 Forbidden');
+ 	echo "<span style=\"color: #ff0000\">Something went wrong!</span>\n";
+    echo "<span style=\"color: #ff0000\">$errormessage</span>\n";
+    echo "</pre>\n</body>\n</html>";
+    exit;
+}
+
+if (!function_exists('apache_request_headers')) {
+    $errormessage = 'Cannot see the function apache_request_headers';
+    exit_if_error($errormessage);
+}
 
 $headers = apache_request_headers();
 
@@ -46,10 +56,8 @@ foreach ($allowed_ips as $allow) {
 }
 
 if (!$allowed) {
-	header('HTTP/1.1 403 Forbidden');
- 	echo "<span style=\"color: #ff0000\">Sorry, no hamster - better convince your parents!</span>\n";
-    echo "</pre>\n</body>\n</html>";
-    exit;
+	$errormessage = 'Source is not allowed to trigger update';
+    exit_if_error($errormessage);
 }
 
 flush();
