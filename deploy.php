@@ -4,7 +4,7 @@
 // Available from https://gist.github.com/nichtich/5290675#file-deploy-php
 
 $TITLE   = 'Git Deployment Service';
-$VERSION = '0.11';
+$VERSION = '0.1';
 
 echo <<<EOT
 <!DOCTYPE HTML>
