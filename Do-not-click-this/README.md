@@ -13,8 +13,13 @@ order to get the "full experience".**
 
 And also you may want to turn down the volume!
 
-When you are ready, [click here](https://ngn13.github.io/youareanidiot/index.html) to visit
+When you are ready, [click here](http://145.89.192.191/Do-not-click-this/) to visit
 the website
+
+<br>
+
+### Where can I learn more about this wonderful website?
+[The Legend of YouAreAnIdiot.org](https://youtu.be/kgs2WTlkp5g) is very informing.
 
 <br>
 
