@@ -15,9 +15,8 @@ echo <<<EOT
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
 <pre>
-  o-o    $TITLE
- /\\"/\   v$VERSION
-(`=*=') 
+$TITLE
+v$VERSION
 
 EOT;
 
