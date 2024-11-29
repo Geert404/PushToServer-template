@@ -17,8 +17,7 @@ echo <<<EOT
 <pre>
 $TITLE
 v$VERSION
-
-
+\n
 EOT;
 
 // Check whether the received trigger is from an allowed source
