@@ -9,11 +9,11 @@
 		<h4>Huidige datum en tijd:<p id="date-time"></p></h4>
 		<script>
 			function displayDateTime() {
-                const now = new Date();
-                const dateTime = now.toLocaleString();
+                const dateTime = new Date().toLocaleString();
                 document.getElementById("date-time").textContent = dateTime;
 			}
 			displayDateTime();
+			setInterval(function() {displayDateTime();}, 1000);
 		</script>
 	</body>
 </html>
